@@ -27,4 +27,4 @@ console.log(myArr);
 console.log(myArr.slice(1,3));
 //splice will remove or add values to the array and change the original array
 console.log(myArr);
-console.log(myArr.splice(1,3));
+console.log(myArr.splice(1,1));
