@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <img id="image" src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Followers : </b></h4>
+          <p id="follower_count"></p>
+        </div>
+      </div>
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    console.log(xhr.readyState);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4){
+            //console.log(typeof 
+        const response = JSON.parse(this.responseText);
+        //console.log(typeof response);
+            console.log(response.followers);
+            console.log(response);
+            document.getElementById("image").src = response.avatar_url;
+            document.getElementById("follower_count").innerHTML = response.followers;
+        }
+    }
+    xhr.send();
+</script>
+</html>
