@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prakhar And Shikhar</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    const h1_change = function(){document.querySelector("h1").innerHTML = "Prak And Shik"};
+    const changeH1 = setTimeout(h1_change, 3000);
+    const console_print = function(){console.log("H1 Tag Chnage")};
+    setTimeout(console_print,3500);
+    //clearTimeout(changeH1);
+    document.querySelector("#stop").addEventListener("click",function() {
+        clearTimeout(changeH1);
+        console.log("Change H1 Executed");
+    });
+</script>
+</html>
