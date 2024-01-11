@@ -81,6 +81,8 @@ function newGame() {
     let randomNum = parseInt(Math.random() * 100 + 1);
     //prevGuess = [];
     numGuess = 1;
+    remaining.innerHTML = 10;
+    lowOrHigh.innerHTML= "";
     guessesArr.innerHTML = '';
     userInput.removeAttribute('disabled');
     startOver.removeChild(p);
